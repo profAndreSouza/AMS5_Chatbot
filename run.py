@@ -1,13 +1,9 @@
-from flask import Flask, render_template
-from controllers.analysis_controller import bp_analysis
+from flask import Flask
+from app.routes import bp_analysis
 
 def create_app():
     app = Flask(__name__)
     app.register_blueprint(bp_analysis)
-
-    @app.route("/")
-    def home():
-        return render_template("index.html")
 
     return app
 

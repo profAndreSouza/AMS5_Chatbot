@@ -1,9 +1,6 @@
-from flask import Blueprint, request, jsonify
+from flask import request, jsonify
 from services.nlp_service import analyze_text
 
-bp_analysis = Blueprint("analysis", __name__)
-
-@bp_analysis.route("/analyze", methods=["POST"])
 def analyze():
     data = request.json
     text = data.get("text")
